@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/controleestoque?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: tico100
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # Atualiza o esquema do banco de dados
+      dialect: org.hibernate.dialect.MySQL8Dialect # Define o dialeto para MySQL 8
+    show-sql: false # Não exibe as queries SQL no console
+
+jwt:
+  secret-key: mySuperSecretKeyForJWTGenerationAndValidation12345 # Sua chave secreta
+  accessTokenExpiration: 3600000 # 1 hora (em milissegundos)
+  refreshTokenExpiration: 604800000 # 7 dias (em milissegundos)
+
+server:
+  error:
+    include-stacktrace: never # Não inclui a stack trace em erros
